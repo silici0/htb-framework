@@ -161,6 +161,11 @@ npm run build
 npm test
 ```
 
+## TODOs
+
+- Develop a playbook-based knowledge base to track commands and lessons learned.
+- Ensure the system is checked before every command execution to reference past results and best practices.
+
 ## Contribuição
 
 1. Faça um fork do projeto
