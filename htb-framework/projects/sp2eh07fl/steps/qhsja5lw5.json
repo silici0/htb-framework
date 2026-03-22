@@ -1,0 +1,15 @@
+{
+  "id": "qhsja5lw5",
+  "machineId": "sp2eh07fl",
+  "phase": "recon_enum",
+  "title": "What username is able to log into the target over telnet with a blank password?",
+  "description": "",
+  "commands": [
+    "telnet mew.htb"
+  ],
+  "screenshots": [],
+  "results": "root",
+  "status": "success",
+  "createdAt": "2026-03-22T20:58:48.286Z",
+  "updatedAt": "2026-03-22T20:59:24.696Z"
+}

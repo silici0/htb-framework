@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  htb-framework:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./projects:/app/projects
+      - ./docs:/app/docs
+    environment:
+      - NODE_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+
+  # Optional container for advanced tools
+  pentest-tools:
+    image: kalilinux/kali-rolling
+    command: sleep infinity
+    volumes:
+      - ./projects:/root/projects
+      - ./tools:/root/tools
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    network_mode: host
+    restart: unless-stopped

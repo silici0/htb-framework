@@ -1,0 +1,12 @@
+{
+  "id": "kei8p0tav",
+  "machineId": "sp2eh07fl",
+  "phase": "reconnaissance",
+  "title": "What tool do we use to interact with the operating system in order to issue commands via the command line, such as the one to start our VPN connection? It's also known as a console or shell.",
+  "description": "",
+  "commands": [],
+  "results": "terminal",
+  "status": "success",
+  "createdAt": "2026-03-21T22:04:58.526Z",
+  "updatedAt": "2026-03-22T16:13:58.360Z"
+}

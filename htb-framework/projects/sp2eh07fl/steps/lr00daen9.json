@@ -1,0 +1,15 @@
+{
+  "id": "lr00daen9",
+  "machineId": "sp2eh07fl",
+  "phase": "recon_enum",
+  "title": "What is the name of the most common tool for finding open ports on a target?",
+  "description": "Nmap (\"Network Mapper\") is an open source tool for network exploration and security auditing. It was designed to rapidly scan large networks, although it works fine against single hosts.",
+  "commands": [
+    "nmap -sV -sC -T4 meow.htb"
+  ],
+  "screenshots": [],
+  "results": "nmap",
+  "status": "success",
+  "createdAt": "2026-03-22T20:55:17.318Z",
+  "updatedAt": "2026-03-22T20:55:34.561Z"
+}
