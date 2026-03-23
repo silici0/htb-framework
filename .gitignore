@@ -49,6 +49,7 @@ projects/*/agents/*.md
 projects/*/conclusion.txt
 projects/*/playbook.md
 projects/*/writeup.md
+projects/*
 
 # Tools
 tools/
