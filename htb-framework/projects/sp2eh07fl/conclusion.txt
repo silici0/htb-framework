@@ -1,1 +1,0 @@
-The exploitation of the Meow machine served as a fundamental introduction to the concepts of offensive security and network infrastructure within the Hack The Box environment.

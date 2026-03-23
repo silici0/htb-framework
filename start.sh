@@ -3,7 +3,32 @@
 # HTB Framework - Startup Script
 # This script starts the framework with Docker Compose
 
-echo "🚀 Starting HTB Framework..."
+# Default port
+PORT=3000
+
+# Parse command line arguments
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -p|--port)
+            PORT="$2"
+            shift 2
+            ;;
+        *)
+            echo "Unknown option: $1"
+            echo "Usage: $0 [-p|--port PORT]"
+            exit 1
+            ;;
+    esac
+done
+
+# Validate port number
+if ! [[ "$PORT" =~ ^[0-9]+$ ]] || [ "$PORT" -lt 1 ] || [ "$PORT" -gt 65535 ]; then
+    echo "❌ Invalid port number: $PORT"
+    echo "Port must be a number between 1 and 65535"
+    exit 1
+fi
+
+echo "🚀 Starting HTB Framework on port $PORT..."
 echo "================================"
 
 # Check if Docker is installed
@@ -32,6 +57,9 @@ if [ ! -f "Dockerfile" ]; then
 fi
 
 echo "✅ Initial checks completed"
+
+# Export PORT for docker-compose
+export PORT
 
 # Build and start containers
 echo "🔨 Building containers..."
@@ -62,7 +90,7 @@ if docker-compose ps | grep -q "Up"; then
     echo "✅ Containers are running"
     echo ""
     echo "🎉 HTB Framework is ready!"
-    echo "🌐 Access: http://localhost:3000"
+    echo "🌐 Access: http://localhost:$PORT"
     echo ""
     echo "Useful commands:"
     echo "  View logs: docker-compose logs -f"
